@@ -22,3 +22,11 @@ app.get('/produto/:id?',(req,res)=>{
     let {id} = req.params;
     res.send('Você escolheu o produto com id: '+id);
 });
+
+const series = [{id: 1,nome: 'Irmão do Jorel'},{id: 2,nome: 'Um maluco no pedaço'}]
+
+app.get('/serie/:id',(req,res)=>{
+    let idSerie = req.params.id;
+    let serie = series.find(serie => serie.id == idSerie);    
+    res.send(serie);
+});
